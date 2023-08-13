@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        map:layout_constraintBottom_toTopOf="@+id/placeTextView"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".view.MapsActivity" />
+
+    <EditText
+        android:id="@+id/placeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Location Name"
+        android:inputType="text"
+        map:layout_constraintBottom_toTopOf="@+id/saveButtonView"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/saveButtonView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveLocation"
+        android:text="Save"
+        map:layout_constraintBottom_toTopOf="@+id/deleteButtonView"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:id="@+id/deleteButtonView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deleteLocation"
+        android:text="Delete"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="1.0"
+        map:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
